@@ -5,7 +5,7 @@ import java.util.concurrent.Semaphore;
 public class Main {
 
 	public static void main(String[] args) {
-		Semaphore semaforo = new Semaphore(1);
+		Semaphore semaforo = new Semaphore(4);
 		Parking parking = new Parking();
 
 		//Creacion de cada hilo

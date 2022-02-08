@@ -54,20 +54,20 @@ public class Coche extends Thread {
 			} catch (InterruptedException ex) {
 			}
 
-			//Llama al método de la clase Parking
+			// Llama al método de la clase Parking
 			entro = parking.plazaOcupada();
 
-			// Deja el semaforo en verde y el recurso disponible de nuevo
-			semaforo.release();
-
-			//Método sleep para dormir aleatoriamente al hilo
+			// Método sleep para dormir aleatoriamente al hilo
 			try {
-				sleep((int) (Math.random() * 50));
+				sleep((int) (Math.random() * 1000));
 			} catch (InterruptedException e) {
 				System.out.println(e);
 			}
 
-			//Condicion para ver si el coche entro para poder salir
+			// Deja el semaforo en verde y el recurso disponible de nuevo
+			semaforo.release();
+
+			// Condicion para ver si el coche entro para poder salir
 			if (entro == true) {
 				try {
 
@@ -78,25 +78,26 @@ public class Coche extends Thread {
 				} catch (InterruptedException ex) {
 				}
 
-				//Llama al método de la clase Parking
+				// Llama al método de la clase Parking
 				parking.plazaLibre();
 
-				// Deja el semaforo en verde y el recurso disponible de nuevo
-				semaforo.release();
-
-				//Método sleep para dormir aleatoriamente al hilo
+				// Método sleep para dormir aleatoriamente al hilo
 				try {
-					sleep((int) (Math.random() + 50));
+					sleep((int) (Math.random() + 1000));
 				} catch (InterruptedException e) {
 					System.out.println(e);
 				}
 
+				// Deja el semaforo en verde y el recurso disponible de nuevo
+				semaforo.release();
+
 			}
+
 		}
 
 	}
 
-	//Método para finalizar el bucle
+	// Método para finalizar el bucle
 	public void finalizar() {
 		bucle = false;
 	}

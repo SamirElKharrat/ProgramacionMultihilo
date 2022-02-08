@@ -52,8 +52,12 @@ public class HiloProductor extends Thread {
 
 				// Condicion para cuando la variable de x sea igual a la longitud del buffer
 				// pasar el valor a 0 para controlar las pocisiones del buffer
-				if (x == buffer.length)
+				if (buffer[x].equals("")) {
+					x -= 1;
+				}
+				if (x == -1) {
 					x = 0;
+				}
 
 				// Añadimos caracter al buffer
 				buffer[x] = String.valueOf(ch);

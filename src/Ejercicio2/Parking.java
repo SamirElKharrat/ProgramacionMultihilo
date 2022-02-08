@@ -49,6 +49,9 @@ public class Parking {
 				plazas--;
 				System.out.println("Plazas libres: " + plazas);
 				System.out.println("Parking [7] [4] [3] [8] [1]");
+				if(i > numparkingficticio.length) {
+					entro = false;
+				}
 				entro = true;
 				break;
 			} else {
