@@ -36,9 +36,10 @@ public class Parking {
 	 * 
 	 * @return booleano para gestionar si el hilo entro o no al parking
 	 */
-	public boolean plazaOcupada() {
+	public synchronized boolean plazaOcupada() {
 
-		//for donde recorrera la array buscando plazas libres y al encontrarlas la llenara y acaba el for
+		// for donde recorrera la array buscando plazas libres y al encontrarlas la
+		// llenara y acaba el for
 		for (int i = 0; i < numparkingficticio.length; i++) {
 			if (plazasdis[i] == true) {
 				plazasdis[i] = false;
@@ -49,7 +50,7 @@ public class Parking {
 				plazas--;
 				System.out.println("Plazas libres: " + plazas);
 				System.out.println("Parking [7] [4] [3] [8] [1]");
-				if(i > numparkingficticio.length) {
+				if (i > numparkingficticio.length) {
 					entro = false;
 				}
 				entro = true;
@@ -60,7 +61,7 @@ public class Parking {
 
 		}
 
-		//retorno booleano
+		// retorno booleano
 		return entro;
 
 	}
@@ -70,9 +71,10 @@ public class Parking {
 	 * Método plazaLibre donde se gestionara la salida del parking
 	 * 
 	 */
-	public void plazaLibre() {
+	public synchronized void plazaLibre() {
 
-		//for donde recorrera la array viendo si la plaza esta ocupada y saliendo de ella
+		// for donde recorrera la array viendo si la plaza esta ocupada y saliendo de
+		// ella
 		for (int i = 0; i < numparkingficticio.length; i++) {
 			if (plazasdis[i] == false) {
 				plazasdis[i] = true;
